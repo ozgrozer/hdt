@@ -12,23 +12,33 @@ class App extends Component {
 
     this.state = {
       objects: [
-        { x: 399, y: 117, width: 118, name: 'headFrontAiry' },
-        { x: 390, y: 263, width: 220, name: 'bottomStandingJogging' },
-        { x: 427, y: 183, width: 156, name: 'bodyJacket' }
+        { x: 399, y: 117, width: 118, zIndex: 1, name: 'headFrontAiry' },
+        { x: 390, y: 263, width: 220, zIndex: 1, name: 'bottomStandingJogging' },
+        { x: 427, y: 183, width: 156, zIndex: 1, name: 'bodyJacket' }
       ],
       objectsList
     }
   }
 
   addImage (opts) {
-    const objects = this.state.objects
+    const { objects } = this.state
     objects[objects.length] = { x: 10, y: 10, width: 100, name: opts.objectName }
     this.setState({ objects })
   }
 
   removeImage (opts) {
-    const objects = this.state.objects
+    const { objects } = this.state
     delete objects[opts.key]
+    this.setState({ objects })
+  }
+
+  moveTo (opts) {
+    const { objects } = this.state
+    if (opts.direction === 'front') {
+      objects[opts.key].zIndex = objects[opts.key].zIndex + 1
+    } else if (opts.direction === 'back') {
+      objects[opts.key].zIndex = objects[opts.key].zIndex - 1
+    }
     this.setState({ objects })
   }
 
@@ -73,9 +83,8 @@ class App extends Component {
             {
               this.state.objectsList.map((objectName, key) => {
                 return (
-                  <Fragment>
+                  <Fragment key={key}>
                     <img
-                      key={key}
                       alt={objectName}
                       title={objectName}
                       src={`objects/${objectName}.svg`}
@@ -97,10 +106,30 @@ class App extends Component {
                   minWidth={10}
                   minHeight={10}
                   lockAspectRatio
-                  default={{ x: object.x, y: object.y, width: object.width }}>
+                  style={{ zIndex: object.zIndex }}
+                  default={{ x: object.x, y: object.y, width: object.width }}
+                  >
                   <img src={`objects/${object.name}.svg`} alt={object.name} draggable='false' />
 
-                  <div className='remove' onClick={this.removeImage.bind(this, { key })}>
+                  <div
+                    title='Move to back'
+                    className='moveToBack'
+                    onClick={this.moveTo.bind(this, { direction: 'back', key })}
+                    >
+                    <img src='icons/arrowDown.svg' alt='' />
+                  </div>
+                  <div
+                    title='Move to front'
+                    className='moveToFront'
+                    onClick={this.moveTo.bind(this, { direction: 'front', key })}
+                    >
+                    <img src='icons/arrowUp.svg' alt='' />
+                  </div>
+                  <div
+                    title='Remove'
+                    className='remove'
+                    onClick={this.removeImage.bind(this, { key })}
+                    >
                     <img src='icons/remove.svg' alt='' />
                   </div>
                 </Rnd>

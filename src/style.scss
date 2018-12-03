@@ -88,35 +88,53 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       border-radius: $borderRadius;
       border: 1px solid transparent;
       &:hover, &:active {
+        z-index: 999999999999 !important;
         border: 1px solid darken($sceneBackgroundColor, 20%);
 
-        .remove {
+        .moveToBack, .moveToFront, .remove {
           top: 0;
-          right: 0;
           width: 20px;
           height: 20px;
           display: block;
           cursor: pointer;
           position: absolute;
-          background-color: #dc3545;
           border-radius: $borderRadius;
-          &:hover, &:active {
-            background-color: darken(#dc3545, 10%);
+          &.moveToBack {
+            right: 42px;
+            background-color: #037bff;
+            &:hover, &:active {
+              background-color: darken(#037bff, 10%);
+            }
+          }
+          &.moveToFront {
+            right: 21px;
+            background-color: #15a2b8;
+            &:hover, &:active {
+              background-color: darken(#15a2b8, 10%);
+            }
+          }
+          &.remove {
+            right: 0;
+            background-color: #dc3545;
+            &:hover, &:active {
+              background-color: darken(#dc3545, 10%);
+            }
           }
 
           img {
             width: 14px;
-            height: 14px;
             margin: 3px;
+            height: 14px;
           }
         }
       }
 
-      .remove {
+      .moveToBack, .moveToFront, .remove {
         display: none;
+        user-select: none;
       }
 
-      img {
+      >img {
         width: 100%;
       }
     }
