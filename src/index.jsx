@@ -22,7 +22,7 @@ class App extends Component {
 
   addImage (opts) {
     const { objects } = this.state
-    objects[objects.length] = { x: 10, y: 10, width: 100, name: opts.objectName }
+    objects[objects.length] = { x: 10, y: 10, width: 100, zIndex: 1, name: opts.objectName }
     this.setState({ objects })
   }
 
