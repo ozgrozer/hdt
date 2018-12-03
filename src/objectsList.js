@@ -43,5 +43,5 @@ module.exports = [
   'headFrontWavy',
   'objectsSeatBall',
   'objectsSeatCube',
-  'objectsSeatCube2',
+  'objectsSeatCube2'
 ]
