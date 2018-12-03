@@ -1,0 +1,13 @@
+<svg width="99px" height="210px" viewBox="0 0 99 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Scene/Home" transform="translate(-25.000000, 0.000000)">
+            <g id="Hanging-Lamp" transform="translate(25.000000, 0.000000)">
+                <g id="Light" transform="translate(0.000000, 152.673469)">
+                    <ellipse id="Hanging-Lamp-Light" fill="#F2F2F2" cx="49.5" cy="34.5" rx="42.5" ry="22.5"></ellipse>
+                    <path d="M99,50 C99,22.3857625 76.8380951,0 49.5,0 C22.1619049,0 -7.10542736e-15,22.3857625 -7.10542736e-15,50" id="Hanging-Lamp" fill="#DDE3E9"></path>
+                </g>
+                <rect id="Wire" fill="#DDE3E9" x="47" y="0" width="5" height="160"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

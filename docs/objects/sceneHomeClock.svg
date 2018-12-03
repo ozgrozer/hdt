@@ -1,0 +1,16 @@
+<svg width="106px" height="106px" viewBox="0 0 106 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Scene/Home" transform="translate(-505.000000, -85.000000)">
+            <g id="Clock" transform="translate(505.000000, 85.000000)">
+                <circle id="Clock-Frame" fill="#F2F2F2" cx="53" cy="53" r="53"></circle>
+                <circle id="Time" fill-opacity="0.1" fill="#000000" cx="53" cy="11" r="3"></circle>
+                <circle id="Time" fill-opacity="0.1" fill="#000000" cx="11" cy="53" r="3"></circle>
+                <circle id="Time" fill-opacity="0.1" fill="#000000" cx="95" cy="53" r="3"></circle>
+                <circle id="Time" fill-opacity="0.1" fill="#000000" cx="53" cy="95" r="3"></circle>
+                <polygon id="Hand" fill="#AFB9C5" points="53 17 55 52 51 52"></polygon>
+                <polygon id="Hand" fill="#AFB9C5" transform="translate(62.213203, 62.213203) rotate(135.000000) translate(-62.213203, -62.213203) " points="62.2132034 50.2132034 64.2132034 74.2132034 60.2132034 74.2132034"></polygon>
+                <circle id="Time" fill="#C5CFD6" cx="53" cy="53" r="4"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

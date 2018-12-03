@@ -43,5 +43,15 @@ module.exports = [
   'headFrontWavy',
   'objectsSeatBall',
   'objectsSeatCube',
-  'objectsSeatCube2'
+  'objectsSeatCube2',
+  'sceneHomePlant',
+  'sceneHomeTable',
+  'sceneHomeBigLeafPlant',
+  'sceneHomeLamp',
+  'sceneHomeHangingLamp',
+  'sceneHomeClock',
+  'scenePlantTopLeaves',
+  'scenePlantMaceta',
+  'scenePlantPlantLeft',
+  'scenePlantPlantRight',
 ]
