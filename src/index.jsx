@@ -12,9 +12,9 @@ class App extends Component {
 
     this.state = {
       objects: [
-        { x: 399, y: 117, width: 118, zIndex: 1, name: 'headFrontAiry' },
-        { x: 390, y: 263, width: 220, zIndex: 1, name: 'bottomStandingJogging' },
-        { x: 427, y: 183, width: 156, zIndex: 1, name: 'bodyJacket' }
+        { x: 399, y: 127, width: 118, zIndex: 1, name: 'headFrontAiry' },
+        { x: 390, y: 273, width: 220, zIndex: 1, name: 'bottomStandingJogging' },
+        { x: 427, y: 193, width: 156, zIndex: 1, name: 'bodyJacket' }
       ],
       objectsList
     }
