@@ -34,7 +34,7 @@ class App extends React.Component {
     html2canvas(document.getElementsByClassName('scene')[0]).then(function (canvas) {
       const a = document.createElement('a')
       a.href = canvas.toDataURL('image/jpg').replace('image/jpg', 'image/octet-stream')
-      a.download = 'isometric.jpg'
+      a.download = 'humaaans.jpg'
       a.click()
     })
   }
