@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   saveImage () {
-    html2canvas(document.getElementsByClassName('scene')[0]).then(function (canvas) {
+    html2canvas(document.getElementById('scene')).then(function (canvas) {
       const a = document.createElement('a')
       a.href = canvas.toDataURL('image/jpg').replace('image/jpg', 'image/octet-stream')
       a.download = 'humaaans.jpg'

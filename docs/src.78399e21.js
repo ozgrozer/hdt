@@ -36438,7 +36438,7 @@ function (_React$Component) {
   }, {
     key: "saveImage",
     value: function saveImage() {
-      (0, _html2canvas.default)(document.getElementsByClassName('scene')[0]).then(function (canvas) {
+      (0, _html2canvas.default)(document.getElementById('scene')).then(function (canvas) {
         var a = document.createElement('a');
         a.href = canvas.toDataURL('image/jpg').replace('image/jpg', 'image/octet-stream');
         a.download = 'humaaans.jpg';
