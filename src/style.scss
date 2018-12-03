@@ -93,20 +93,21 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
         .remove {
           top: 0;
           right: 0;
-          color: #fff;
           width: 20px;
           height: 20px;
           display: block;
           cursor: pointer;
-          font-size: 12px;
-          font-weight: 500;
-          line-height: 20px;
-          text-align: center;
           position: absolute;
           background-color: #dc3545;
           border-radius: $borderRadius;
           &:hover, &:active {
             background-color: darken(#dc3545, 10%);
+          }
+
+          img {
+            width: 14px;
+            height: 14px;
+            margin: 3px;
           }
         }
       }

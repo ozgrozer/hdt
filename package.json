@@ -2,7 +2,7 @@
   "name": "hdt",
   "scripts": {
     "start": "parcel ./src/index.html --out-dir ./docs --public-url / --port 1140",
-    "prebuild": "cd docs && pwd && find . -maxdepth 1 ! -name 'objects' -type f -exec rm -rf {} +",
+    "prebuild": "cd docs && pwd && find . -maxdepth 1 ! -name 'objects' ! -name 'icons' -type f -exec rm -rf {} +",
     "build": "parcel build ./src/index.html --out-dir ./docs --public-url ./ --no-source-maps"
   },
   "license": "MIT",

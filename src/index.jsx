@@ -100,7 +100,9 @@ class App extends Component {
                   default={{ x: object.x, y: object.y, width: object.width }}>
                   <img src={`objects/${object.name}.svg`} alt={object.name} draggable='false' />
 
-                  <div className='remove' onClick={this.removeImage.bind(this, { key })}>x</div>
+                  <div className='remove' onClick={this.removeImage.bind(this, { key })}>
+                    <img src='icons/remove.svg' alt='' />
+                  </div>
                 </Rnd>
               )
             })
