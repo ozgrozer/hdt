@@ -1,0 +1,23 @@
+{
+  "name": "hdt",
+  "scripts": {
+    "start": "parcel ./src/index.html --out-dir ./docs --public-url / --port 1140",
+    "prebuild": "cd docs && pwd && find . -maxdepth 1 ! -name 'objects' -type f -exec rm -rf {} +",
+    "build": "parcel build ./src/index.html --out-dir ./docs --public-url ./ --no-source-maps"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "html2canvas": "^1.0.0-alpha.12",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-rnd": "^9.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.2.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.10.3",
+    "sass": "^1.14.3"
+  }
+}

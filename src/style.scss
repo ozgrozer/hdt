@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 40px 0;
+}
+
+body, input {
+  font-family: 'Raleway', sans-serif;
+}
+
+$objectsAndSceneHeight: 562px;
+$objectsWidth: 200px;
+$sceneWidth: 1000px;
+$padding: 40px;
+$containerWidth: $objectsWidth + $sceneWidth + $padding;
+$borderRadius: 4px;
+$objectsBackgroundColor: #f1f3f4;
+$sceneBackgroundColor: darken($objectsBackgroundColor, 0%);
+$footerBackgroundColor: darken($objectsBackgroundColor, 0%);
+
+#container {
+  margin: auto;
+  width: $containerWidth;
+
+  #objects {
+    float: left;
+    width: $objectsWidth;
+    border-radius: $borderRadius;
+    height: $objectsAndSceneHeight;
+    background-color: $objectsBackgroundColor;
+
+    #searchWrapper {
+      padding: 5px;
+      height: 40px;
+
+      #search {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 10px;
+        outline: none;
+        border-radius: $borderRadius;
+      }
+    }
+
+    #list {
+      overflow-y: auto;
+      padding: $padding;
+      text-align: center;
+      height: calc(100% - 40px);
+
+      img {
+        cursor: pointer;
+        max-height: 100px;
+        margin-top: $padding;
+        max-width: $objectsWidth - ($padding * 2);
+        border-radius: $borderRadius;
+        border: 1px solid transparent;
+        &:hover, &:active {
+          border: 1px solid darken($sceneBackgroundColor, 20%);
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  #scene {
+    float: left;
+    width: $sceneWidth;
+    position: relative;
+    margin-left: $padding;
+    border-radius: $borderRadius;
+    height: $objectsAndSceneHeight;
+    background-color: $sceneBackgroundColor;
+
+    .react-draggable {
+      border-radius: $borderRadius;
+      border: 1px solid transparent;
+      &:hover, &:active {
+        border: 1px solid darken($sceneBackgroundColor, 20%);
+
+        .remove {
+          top: 0;
+          right: 0;
+          color: #fff;
+          width: 20px;
+          height: 20px;
+          display: block;
+          cursor: pointer;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 20px;
+          text-align: center;
+          position: absolute;
+          background-color: #dc3545;
+          border-radius: $borderRadius;
+          &:hover, &:active {
+            background-color: darken(#dc3545, 10%);
+          }
+        }
+      }
+
+      .remove {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    #saveImage {
+      right: 0px;
+      color: #fff;
+      height: 30px;
+      border: none;
+      bottom: -35px;
+      cursor: pointer;
+      padding: 0 20px;
+      font-weight: 500;
+      line-height: 30px;
+      position: absolute;
+      background-color: #037bff;
+      text-transform: uppercase;
+      border-radius: $borderRadius;
+      &:hover, &:active {
+        background-color: darken(#037bff, 10%);
+      }
+    }
+  }
+
+  #footer1, #footer2 {
+    color: #555;
+    float: left;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: $padding;
+    border-radius: $borderRadius;
+    width: ($containerWidth - $padding) / 2;
+    background-color: $footerBackgroundColor;
+    &#footer2 {
+      margin-left: $padding;
+    }
+
+    a {
+      color: #555;
+      font-weight: 500;
+      text-decoration: none;
+      &:hover {
+        color: darken(#555, 30%);
+        border-bottom: 1px solid darken(#555, 30%);
+      }
+    }
+  }
+}
