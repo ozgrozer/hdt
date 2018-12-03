@@ -2,7 +2,7 @@
 
 [https://ozgrozer.github.io/hdt/](https://ozgrozer.github.io/hdt/)
 
-![](preview.jpg)
+![](preview.jpg?v=2)
 
 ## License
 
