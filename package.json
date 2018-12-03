@@ -8,16 +8,16 @@
   "license": "MIT",
   "dependencies": {
     "html2canvas": "^1.0.0-alpha.12",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-rnd": "^9.0.2"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-rnd": "^9.0.4"
   },
   "devDependencies": {
-    "autoprefixer": "^9.2.1",
+    "autoprefixer": "^9.4.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.10.3",
-    "sass": "^1.14.3"
+    "sass": "^1.15.1"
   }
 }
