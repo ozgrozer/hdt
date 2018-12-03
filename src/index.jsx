@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import { Rnd } from 'react-rnd'
 import html2canvas from 'html2canvas'
@@ -6,7 +6,7 @@ import html2canvas from 'html2canvas'
 import './style.scss'
 import objectsList from './objectsList'
 
-class App extends React.Component {
+class App extends Component {
   constructor () {
     super()
 
@@ -73,12 +73,15 @@ class App extends React.Component {
             {
               this.state.objectsList.map((objectName, key) => {
                 return (
-                  <img
-                    key={key}
-                    alt={objectName}
-                    title={objectName}
-                    src={`objects/${objectName}.svg`}
-                    onClick={this.addImage.bind(this, { objectName })} />
+                  <Fragment>
+                    <img
+                      key={key}
+                      alt={objectName}
+                      title={objectName}
+                      src={`objects/${objectName}.svg`}
+                      onClick={this.addImage.bind(this, { objectName })} />
+                    <br />
+                  </Fragment>
                 )
               })
             }

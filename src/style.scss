@@ -59,10 +59,12 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       img {
         cursor: pointer;
         max-height: 100px;
+        text-align: center;
         margin-top: $padding;
-        max-width: $objectsWidth - ($padding * 2);
+        display: inline-block;
         border-radius: $borderRadius;
         border: 1px solid transparent;
+        max-width: $objectsWidth - ($padding * 2);
         &:hover, &:active {
           border: 1px solid darken($sceneBackgroundColor, 20%);
         }
