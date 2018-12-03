@@ -107,9 +107,9 @@ class App extends React.Component {
         </div>
 
         <div id='footer1'>
-          Click on the images you want to add to the scene from the left side.
+          Click on the illustrations you want to add to the scene from the left side.
           <br />
-          Move/resize/remove your images to make your design.
+          Move/resize/remove your illustrations to make your design.
           <br />
           Hit the save button to save your image.
         </div>
@@ -117,7 +117,7 @@ class App extends React.Component {
         <div id='footer2'>
           Source of this tool: <a href='https://github.com/ozgrozer/hdt' target='_blank'>github.com/ozgrozer/hdt</a>
           <br />
-          Original images: <a href='https://humaaans.com' target='_blank'>humaaans.com</a>
+          Original illustrations: <a href='https://humaaans.com' target='_blank'>humaaans.com</a>
           <br />
           Me: <a href='https://twitter.com/ozgrozer' target='_blank'>twitter.com/ozgrozer</a>
         </div>
