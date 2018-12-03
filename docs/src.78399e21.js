@@ -36404,7 +36404,7 @@ function (_React$Component) {
       objects: [{
         x: 350,
         y: 155,
-        width: 300,
+        width: 100,
         name: 'bodyHoodie'
       }],
       objectsList: _objectsList.default

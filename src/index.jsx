@@ -12,7 +12,7 @@ class App extends React.Component {
 
     this.state = {
       objects: [
-        { x: 350, y: 155, width: 300, name: 'bodyHoodie' }
+        { x: 350, y: 155, width: 100, name: 'bodyHoodie' }
       ],
       objectsList
     }
