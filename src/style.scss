@@ -15,15 +15,23 @@ body, input {
   font-family: 'Raleway', sans-serif;
 }
 
+.transition {
+  transition: color .10s ease-in-out,background-color .10s ease-in-out,border-color .10s ease-in-out,box-shadow .10s ease-in-out,-webkit-box-shadow .10s ease-in-out;
+}
+
+a, input, button, img, div {
+  @extend .transition;
+}
+
 $objectsAndSceneHeight: 562px;
 $objectsWidth: 200px;
 $sceneWidth: 1000px;
 $padding: 40px;
 $containerWidth: $objectsWidth + $sceneWidth + $padding;
 $borderRadius: 4px;
-$objectsBackgroundColor: #f1f3f4;
-$sceneBackgroundColor: darken($objectsBackgroundColor, 0%);
-$footerBackgroundColor: darken($objectsBackgroundColor, 0%);
+$borderWidth: 3px;
+$borderColor: #f2f2f2;
+$objectsBackgroundColor: #fff;
 
 #container {
   margin: auto;
@@ -34,7 +42,7 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
     width: $objectsWidth;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
-    background-color: $objectsBackgroundColor;
+    border: $borderWidth solid $borderColor;
 
     #searchWrapper {
       padding: 5px;
@@ -47,6 +55,10 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
         padding: 10px;
         outline: none;
         border-radius: $borderRadius;
+        border: $borderWidth solid $borderColor;
+        &:focus {
+          border-color: darken($borderColor, 5%);
+        }
       }
     }
 
@@ -63,10 +75,10 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
         margin-top: $padding;
         display: inline-block;
         border-radius: $borderRadius;
-        border: 1px solid transparent;
+        border: $borderWidth solid transparent;
         max-width: $objectsWidth - ($padding * 2);
         &:hover, &:active {
-          border: 1px solid darken($sceneBackgroundColor, 20%);
+          border-color: darken($borderColor, 10%);
         }
         &:first-child {
           margin-top: 0;
@@ -82,14 +94,14 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
     margin-left: $padding;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
-    background-color: $sceneBackgroundColor;
+    border: $borderWidth solid $borderColor;
 
     .react-draggable {
       border-radius: $borderRadius;
-      border: 1px solid transparent;
+      border: $borderWidth solid transparent;
       &:hover, &:active {
         z-index: 999999999999 !important;
-        border: 1px solid darken($sceneBackgroundColor, 20%);
+        border-color: darken($borderColor, 10%);
 
         .moveToBack, .moveToFront, .remove {
           top: 0;
@@ -144,7 +156,7 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       color: #fff;
       height: 30px;
       border: none;
-      bottom: -35px;
+      bottom: -38px;
       cursor: pointer;
       padding: 0 20px;
       font-weight: 500;
@@ -153,8 +165,11 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       background-color: #037bff;
       text-transform: uppercase;
       border-radius: $borderRadius;
-      &:hover, &:active {
+      &:hover {
         background-color: darken(#037bff, 10%);
+      }
+      &:active {
+        background-color: darken(#037bff, 20%);
       }
     }
   }
@@ -168,8 +183,8 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
     text-align: center;
     margin-top: $padding;
     border-radius: $borderRadius;
+    border: $borderWidth solid $borderColor;
     width: ($containerWidth - $padding) / 2;
-    background-color: $footerBackgroundColor;
     &#footer2 {
       margin-left: $padding;
     }
@@ -178,9 +193,10 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       color: #555;
       font-weight: 500;
       text-decoration: none;
+      border-bottom: 1px solid transparent;
       &:hover {
         color: darken(#555, 30%);
-        border-bottom: 1px solid darken(#555, 30%);
+        border-bottom-color: darken(#555, 30%);
       }
     }
   }
