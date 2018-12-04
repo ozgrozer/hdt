@@ -101,7 +101,7 @@ $objectsBackgroundColor: #fff;
       border: $borderWidth solid transparent;
       &:hover, &:active {
         z-index: 999999999999 !important;
-        border-color: darken($borderColor, 10%);
+        border: $borderWidth solid darken($borderColor, 10%);
 
         .moveToBack, .moveToFront, .remove {
           top: 0;
