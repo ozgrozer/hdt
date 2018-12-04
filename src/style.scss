@@ -15,14 +15,6 @@ body, input {
   font-family: 'Raleway', sans-serif;
 }
 
-.transition {
-  transition: color .10s ease-in-out,background-color .10s ease-in-out,border-color .10s ease-in-out,box-shadow .10s ease-in-out,-webkit-box-shadow .10s ease-in-out;
-}
-
-a, input, button, img, div {
-  @extend .transition;
-}
-
 $objectsAndSceneHeight: 562px;
 $objectsWidth: 200px;
 $sceneWidth: 1000px;
