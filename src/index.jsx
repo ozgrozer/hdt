@@ -37,7 +37,7 @@ class App extends Component {
     if (opts.direction === 'front') {
       objects[opts.key].zIndex = objects[opts.key].zIndex + 1
     } else if (opts.direction === 'back') {
-      objects[opts.key].zIndex = objects[opts.key].zIndex - 1
+      objects[opts.key].zIndex = objects[opts.key].zIndex > 1 ? objects[opts.key].zIndex - 1 : 1
     }
     this.setState({ objects })
   }
