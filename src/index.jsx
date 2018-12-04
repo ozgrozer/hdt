@@ -97,45 +97,47 @@ class App extends Component {
           </div>
         </div>
 
-        <div id='scene'>
-          {
-            this.state.objects.map((object, key) => {
-              return (
-                <Rnd
-                  key={key}
-                  minWidth={10}
-                  minHeight={10}
-                  lockAspectRatio
-                  style={{ zIndex: object.zIndex }}
-                  default={{ x: object.x, y: object.y, width: object.width }}
-                  >
-                  <img src={`objects/${object.name}.svg`} alt={object.name} draggable='false' />
+        <div id='sceneWrapper'>
+          <div id='scene'>
+            {
+              this.state.objects.map((object, key) => {
+                return (
+                  <Rnd
+                    key={key}
+                    minWidth={10}
+                    minHeight={10}
+                    lockAspectRatio
+                    style={{ zIndex: object.zIndex }}
+                    default={{ x: object.x, y: object.y, width: object.width }}
+                    >
+                    <img src={`objects/${object.name}.svg`} alt={object.name} draggable='false' />
 
-                  <div
-                    title='Move to back'
-                    className='moveToBack'
-                    onClick={this.moveTo.bind(this, { direction: 'back', key })}
-                    >
-                    <img src='icons/arrowDown.svg' alt='' />
-                  </div>
-                  <div
-                    title='Move to front'
-                    className='moveToFront'
-                    onClick={this.moveTo.bind(this, { direction: 'front', key })}
-                    >
-                    <img src='icons/arrowUp.svg' alt='' />
-                  </div>
-                  <div
-                    title='Remove'
-                    className='remove'
-                    onClick={this.removeImage.bind(this, { key })}
-                    >
-                    <img src='icons/remove.svg' alt='' />
-                  </div>
-                </Rnd>
-              )
-            })
-          }
+                    <div
+                      title='Move to back'
+                      className='moveToBack'
+                      onClick={this.moveTo.bind(this, { direction: 'back', key })}
+                      >
+                      <img src='icons/arrowDown.svg' alt='' />
+                    </div>
+                    <div
+                      title='Move to front'
+                      className='moveToFront'
+                      onClick={this.moveTo.bind(this, { direction: 'front', key })}
+                      >
+                      <img src='icons/arrowUp.svg' alt='' />
+                    </div>
+                    <div
+                      title='Remove'
+                      className='remove'
+                      onClick={this.removeImage.bind(this, { key })}
+                      >
+                      <img src='icons/remove.svg' alt='' />
+                    </div>
+                  </Rnd>
+                )
+              })
+            }
+          </div>
 
           <button id='saveImage' onClick={this.saveImage.bind(this)}>Save</button>
         </div>

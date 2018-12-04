@@ -79,7 +79,7 @@ $objectsBackgroundColor: #fff;
     }
   }
 
-  #scene {
+  #sceneWrapper {
     float: left;
     width: $sceneWidth;
     position: relative;
@@ -88,58 +88,62 @@ $objectsBackgroundColor: #fff;
     height: $objectsAndSceneHeight;
     border: $borderWidth solid $borderColor;
 
-    .react-draggable {
-      border-radius: $borderRadius;
-      border: $borderWidth solid transparent;
-      &:hover, &:active {
-        z-index: 999999999999 !important;
-        border: $borderWidth solid darken($borderColor, 10%);
+    #scene {
+      width: 100%;
+      height: 100%;
+      .react-draggable {
+        border-radius: $borderRadius;
+        border: $borderWidth solid transparent;
+        &:hover, &:active {
+          z-index: 999999999999 !important;
+          border: $borderWidth solid darken($borderColor, 10%);
 
-        .moveToBack, .moveToFront, .remove {
-          top: 0;
-          width: 20px;
-          height: 20px;
-          display: block;
-          cursor: pointer;
-          position: absolute;
-          border-radius: $borderRadius;
-          &.moveToBack {
-            right: 42px;
-            background-color: #037bff;
-            &:hover, &:active {
-              background-color: darken(#037bff, 10%);
+          .moveToBack, .moveToFront, .remove {
+            top: 0;
+            width: 20px;
+            height: 20px;
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            border-radius: $borderRadius;
+            &.moveToBack {
+              right: 42px;
+              background-color: #037bff;
+              &:hover, &:active {
+                background-color: darken(#037bff, 10%);
+              }
             }
-          }
-          &.moveToFront {
-            right: 21px;
-            background-color: #15a2b8;
-            &:hover, &:active {
-              background-color: darken(#15a2b8, 10%);
+            &.moveToFront {
+              right: 21px;
+              background-color: #15a2b8;
+              &:hover, &:active {
+                background-color: darken(#15a2b8, 10%);
+              }
             }
-          }
-          &.remove {
-            right: 0;
-            background-color: #dc3545;
-            &:hover, &:active {
-              background-color: darken(#dc3545, 10%);
+            &.remove {
+              right: 0;
+              background-color: #dc3545;
+              &:hover, &:active {
+                background-color: darken(#dc3545, 10%);
+              }
             }
-          }
 
-          img {
-            width: 14px;
-            margin: 3px;
-            height: 14px;
+            img {
+              width: 14px;
+              margin: 3px;
+              height: 14px;
+            }
           }
         }
-      }
 
-      .moveToBack, .moveToFront, .remove {
-        display: none;
-        user-select: none;
-      }
+        .moveToBack, .moveToFront, .remove {
+          display: none;
+          user-select: none;
+        }
 
-      >img {
-        width: 100%;
+        >img {
+          width: 100%;
+        }
       }
     }
 
