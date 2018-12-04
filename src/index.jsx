@@ -6,6 +6,8 @@ import html2canvas from 'html2canvas'
 import './style.scss'
 import objectsList from './objectsList'
 
+console.log('version:', '1.1.0')
+
 class App extends Component {
   constructor () {
     super()
@@ -42,11 +44,13 @@ class App extends Component {
     this.setState({ objects })
   }
 
-  saveImage () {
-    html2canvas(document.getElementById('scene')).then(function (canvas) {
+  saveImage (opts) {
+    const backgroundColor = opts.format === 'png' ? null : '#fff'
+
+    html2canvas(document.getElementById('scene'), { backgroundColor }).then(function (canvas) {
       const a = document.createElement('a')
-      a.href = canvas.toDataURL('image/jpg').replace('image/jpg', 'image/octet-stream')
-      a.download = 'humaaans.jpg'
+      a.href = canvas.toDataURL(`image/${opts.format}`).replace(`image/${opts.format}`, 'image/octet-stream')
+      a.download = `humaaans.${opts.format}`
       a.click()
     })
   }
@@ -108,29 +112,25 @@ class App extends Component {
                     minHeight={10}
                     lockAspectRatio
                     style={{ zIndex: object.zIndex }}
-                    default={{ x: object.x, y: object.y, width: object.width }}
-                    >
+                    default={{ x: object.x, y: object.y, width: object.width }}>
                     <img src={`objects/${object.name}.svg`} alt={object.name} draggable='false' />
 
                     <div
                       title='Move to back'
                       className='moveToBack'
-                      onClick={this.moveTo.bind(this, { direction: 'back', key })}
-                      >
+                      onClick={this.moveTo.bind(this, { direction: 'back', key })}>
                       <img src='icons/arrowDown.svg' alt='' />
                     </div>
                     <div
                       title='Move to front'
                       className='moveToFront'
-                      onClick={this.moveTo.bind(this, { direction: 'front', key })}
-                      >
+                      onClick={this.moveTo.bind(this, { direction: 'front', key })}>
                       <img src='icons/arrowUp.svg' alt='' />
                     </div>
                     <div
                       title='Remove'
                       className='remove'
-                      onClick={this.removeImage.bind(this, { key })}
-                      >
+                      onClick={this.removeImage.bind(this, { key })}>
                       <img src='icons/remove.svg' alt='' />
                     </div>
                   </Rnd>
@@ -139,7 +139,18 @@ class App extends Component {
             }
           </div>
 
-          <button id='saveImage' onClick={this.saveImage.bind(this)}>Save</button>
+          <button
+            className='saveImage jpg'
+            title='Save with white background'
+            onClick={this.saveImage.bind(this, { format: 'jpg' })}>
+            Save JPG
+          </button>
+          <button
+            className='saveImage png'
+            title='Save with no background (transparent)'
+            onClick={this.saveImage.bind(this, { format: 'png' })}>
+            Save PNG
+          </button>
         </div>
 
         <div id='footer1'>

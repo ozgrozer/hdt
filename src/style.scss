@@ -25,6 +25,38 @@ $borderWidth: 3px;
 $borderColor: #f2f2f2;
 $objectsBackgroundColor: #fff;
 
+$blue: #037bff;
+$green: #29a745;
+$red: #dc3545;
+
+.blueButton {
+  background-color: $blue;
+  &:hover {
+    background-color: darken($blue, 10%);
+  }
+  &:active {
+    background-color: darken($blue, 20%);
+  }
+}
+.greenButton {
+  background-color: $green;
+  &:hover {
+    background-color: darken($green, 10%);
+  }
+  &:active {
+    background-color: darken($green, 20%);
+  }
+}
+.redButton {
+  background-color: $red;
+  &:hover {
+    background-color: darken($red, 10%);
+  }
+  &:active {
+    background-color: darken($red, 20%);
+  }
+}
+
 #container {
   margin: auto;
   width: $containerWidth;
@@ -108,24 +140,15 @@ $objectsBackgroundColor: #fff;
             border-radius: $borderRadius;
             &.moveToBack {
               right: 42px;
-              background-color: #037bff;
-              &:hover, &:active {
-                background-color: darken(#037bff, 10%);
-              }
+              @extend .blueButton;
             }
             &.moveToFront {
               right: 21px;
-              background-color: #15a2b8;
-              &:hover, &:active {
-                background-color: darken(#15a2b8, 10%);
-              }
+              @extend .greenButton;
             }
             &.remove {
               right: 0;
-              background-color: #dc3545;
-              &:hover, &:active {
-                background-color: darken(#dc3545, 10%);
-              }
+              @extend .redButton;
             }
 
             img {
@@ -147,8 +170,7 @@ $objectsBackgroundColor: #fff;
       }
     }
 
-    #saveImage {
-      right: -3px;
+    .saveImage {
       color: #fff;
       height: 30px;
       border: none;
@@ -158,14 +180,15 @@ $objectsBackgroundColor: #fff;
       font-weight: 500;
       line-height: 30px;
       position: absolute;
-      background-color: #037bff;
       text-transform: uppercase;
       border-radius: $borderRadius;
-      &:hover {
-        background-color: darken(#037bff, 10%);
+      &.jpg {
+        right: 98px;
+        @extend .blueButton;
       }
-      &:active {
-        background-color: darken(#037bff, 20%);
+      &.png {
+        right: -3px;
+        @extend .greenButton;
       }
     }
   }
