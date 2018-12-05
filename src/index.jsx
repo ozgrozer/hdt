@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom'
 import { Rnd } from 'react-rnd'
 import html2canvas from 'html2canvas'
 
+import packageJson from './../package.json'
 import './style.scss'
 import objectsList from './objectsList'
-
-console.log('version:', '1.1.0')
 
 class App extends Component {
   constructor () {
@@ -99,6 +98,8 @@ class App extends Component {
               })
             }
           </div>
+
+          <div id='version'>Version: {packageJson.version}</div>
         </div>
 
         <div id='sceneWrapper'>

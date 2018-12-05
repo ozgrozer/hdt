@@ -8,6 +8,7 @@
 }
 
 body {
+  color: #555;
   padding: 40px 0;
 }
 
@@ -63,6 +64,7 @@ $red: #dc3545;
 
   #objects {
     float: left;
+    position: relative;
     width: $objectsWidth;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
@@ -109,6 +111,16 @@ $red: #dc3545;
           margin-top: 0;
         }
       }
+    }
+
+    #version {
+      left: -3px;
+      height: 30px;
+      bottom: -38px;
+      font-size: 12px;
+      line-height: 30px;
+      position: absolute;
+      text-transform: uppercase;
     }
   }
 
@@ -195,7 +207,6 @@ $red: #dc3545;
   }
 
   #footer1, #footer2 {
-    color: #555;
     float: left;
     padding: 10px 0;
     font-size: 14px;
