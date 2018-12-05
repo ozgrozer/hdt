@@ -90,6 +90,7 @@ $red: #dc3545;
       overflow-y: auto;
       padding: $padding;
       text-align: center;
+      overflow-x: hidden;
       height: calc(100% - 40px);
 
       img {
